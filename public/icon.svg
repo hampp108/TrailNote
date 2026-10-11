@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#060911" />
+    </radialGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0F2FE" />
+      <stop offset="50%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="14" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="512" height="512" rx="128" fill="url(#bg)" />
+  <circle cx="256" cy="256" r="230" fill="none" stroke="#1E293B" stroke-width="3" stroke-dasharray="8 6" opacity="0.7"/>
+  <circle cx="256" cy="256" r="190" fill="#0B1120" stroke="url(#blueGrad)" stroke-width="2.5" opacity="0.6"/>
+  
+  <!-- Sound wave pulses -->
+  <path d="M 320 180 A 60 60 0 0 1 360 220" fill="none" stroke="url(#cyanGrad)" stroke-width="4" stroke-linecap="round" opacity="0.85" />
+  <path d="M 335 165 A 85 85 0 0 1 390 220" fill="none" stroke="url(#cyanGrad)" stroke-width="3" stroke-linecap="round" opacity="0.55" />
+  <path d="M 350 150 A 110 110 0 0 1 420 220" fill="none" stroke="url(#cyanGrad)" stroke-width="2" stroke-linecap="round" opacity="0.35" />
+
+  <!-- Botanical branch -->
+  <path d="M 110 350 C 180 340, 240 330, 390 350" fill="none" stroke="#334155" stroke-width="8" stroke-linecap="round" />
+  <path d="M 160 343 C 150 325, 160 305, 175 300 C 185 315, 180 335, 165 342" fill="#38BDF8" opacity="0.8"/>
+  <path d="M 330 345 C 345 325, 365 325, 375 335 C 365 350, 345 352, 330 345" fill="#38BDF8" opacity="0.8"/>
+  
+  <!-- Songbird silhouette with glowing cyan-blue accents -->
+  <g filter="url(#glow)">
+    <!-- Bird body -->
+    <path d="M 180 330 C 160 300, 170 240, 220 210 C 240 180, 275 165, 305 180 C 315 175, 335 180, 345 170 C 340 185, 330 195, 325 200 C 345 225, 345 260, 330 285 C 300 310, 240 335, 180 330 Z" fill="url(#cyanGrad)" />
+    <!-- Wing detail -->
+    <path d="M 230 235 C 270 245, 290 280, 260 315 C 235 315, 215 280, 230 235 Z" fill="#0B1120" opacity="0.6" />
+    <!-- Eye -->
+    <circle cx="300" cy="190" r="4.5" fill="#060911" />
+    <circle cx="301" cy="189" r="1.5" fill="#FFFFFF" />
+    <!-- Beak open in song -->
+    <path d="M 320 188 L 340 182 L 324 196 Z" fill="#38BDF8" />
+  </g>
+</svg>

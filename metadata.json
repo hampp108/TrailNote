@@ -1,0 +1,11 @@
+{
+  "name": "Trailnote",
+  "description": "Offline-first on-device bird song identification and field journal for outdoor trails.",
+  "requestFramePermissions": [
+    "microphone",
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

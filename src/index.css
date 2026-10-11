@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-midnight-bg: #070B12;
+    --color-midnight-surface: #0E1626;
+    --color-midnight-card: #121B2F;
+    --color-midnight-elevated: #18243E;
+    --color-midnight-border: #1E2D4A;
+    --color-midnight-border-subtle: rgba(56, 189, 248, 0.15);
+    --color-cyan-primary: #38BDF8;
+    --color-blue-accent: #3B82F6;
+    --color-electric-glow: #60A5FA;
+    --color-slate-muted: #94A3B8;
+    --color-offwhite: #F1F5F9;
+  }
+
+  body {
+    background-color: #070B12;
+    color: #F1F5F9;
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.font-species {
+  font-family: 'Fraunces', Georgia, serif;
+  font-feature-settings: 'cv01' on, 'cv02' on;
+}
+
+.font-mono-tabular {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Glowing electric blue & cyan animations */
+@keyframes blue-pulse {
+  0%, 100% {
+    box-shadow: 0 0 25px -3px rgba(56, 189, 248, 0.4), 0 0 60px -10px rgba(59, 130, 246, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 45px 5px rgba(56, 189, 248, 0.7), 0 0 90px 15px rgba(59, 130, 246, 0.5);
+    transform: scale(1.03);
+  }
+}
+
+@keyframes listening-ripple {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(1.75);
+    opacity: 0;
+  }
+}
+
+.animate-blue-glow {
+  animation: blue-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-ripple {
+  animation: listening-ripple 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-blue-glow,
+  .animate-ripple {
+    animation: none !important;
+  }
+}
+
+/* Custom scrollbar for black-blue aesthetic */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #070B12;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E2D4A;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38BDF8;
+}
+
+/* Safe area support for notched phones */
+.pb-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom, 1rem));
+}
+
+.pt-safe {
+  padding-top: max(0.75rem, env(safe-area-inset-top, 0.75rem));
+}
